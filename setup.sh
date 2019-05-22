@@ -17,7 +17,7 @@ then
     wget -O iso/ubuntu-14.04.5-server-amd64.iso  http://nl.releases.ubuntu.com/releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
 fi
 
-#packer build ubuntu-14.04.5.json
+packer build ubuntu-14.04.5.json
 
 vboxmanage import output/packer-ubuntu-14.04.5-amd64.ovf
 VBoxManage modifyvm packer-ubuntu-14.04.5-amd64 --nic1 bridged --bridgeadapter1 "en0: Wi-Fi (AirPort)"
